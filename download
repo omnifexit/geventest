@@ -1,0 +1,3 @@
+# URL van de backend API (Laravel) - wordt gebruikt voor de /api/* rewrites
+# Laat dit voorlopig op een placeholder staan als je nog geen backend hebt
+NEXT_PUBLIC_API_URL=http://localhost:8000
