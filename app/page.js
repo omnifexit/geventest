@@ -646,7 +646,7 @@ export default function Dashboard() {
           <div style={{borderTop:`1px solid ${B.grijsMid}`,paddingTop:14,marginBottom:16}}>
             <label style={lbl}>Extra e-mailadressen</label>
             <div style={{display:'flex',gap:8,marginBottom:10}}>
-              <input type="email" value={emailInvoer} onChange={e=>setEmailInvoer(e.target.value)} onKeyDown={e=>{if(e.key==='Enter'){const ev=emailInvoer.trim();if(ev&&!form.extraEmails.includes(ev))setForm(f=>({...f,extraEmails:[...f.extraEmails,ev]});setEmailInvoer('');}}} placeholder="extra@bedrijf.nl" style={{...inp,flex:1}}/>
+              <input type="email" value={emailInvoer} onChange={e=>setEmailInvoer(e.target.value)} onKeyDown={e=>{if(e.key==='Enter'){const ev=emailInvoer.trim();if(ev&&!form.extraEmails.includes(ev))setForm(f=>({...f,extraEmails:[...f.extraEmails,ev]}));setEmailInvoer('');}}} placeholder="extra@bedrijf.nl" style={{...inp,flex:1}}/>
               <button style={{...btn('secondary'),flexShrink:0}} onClick={()=>{const e=emailInvoer.trim();if(e&&!form.extraEmails.includes(e))setForm(f=>({...f,extraEmails:[...f.extraEmails,e]}));setEmailInvoer('');}}>+ Voeg toe</button>
             </div>
             <div style={{display:'flex',flexWrap:'wrap',gap:7}}>{form.extraEmails.map(e=><span key={e} style={{background:B.paarsLight,color:B.paars,padding:'5px 10px',borderRadius:20,fontSize:12,fontWeight:600,display:'inline-flex',alignItems:'center',gap:5}}>📧 {e}<span style={{cursor:'pointer',fontWeight:900}} onClick={()=>setForm(f=>({...f,extraEmails:f.extraEmails.filter(x=>x!==e)}))}>×</span></span>)}</div>
